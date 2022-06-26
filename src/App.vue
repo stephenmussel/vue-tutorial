@@ -11,6 +11,14 @@
         },
         titleClass: 'title'
       }
+    },
+    methods: {
+      increment() {
+        this.counter.count++
+      },
+      decrease() {
+        this.counter.count--
+      }
     }
   }
 </script>
@@ -27,9 +35,16 @@
   <!-- <p>Counter is: {{ counter.count }}</p> -->
 
   <!-- added dynamic class binding to `class` -->
-  <h1 v-bind:class="titleClass">Make me red</h1>
+  <!-- <h1 v-bind:class="titleClass">Make me red</h1> -->
   <!-- binding directive shorthand -->
-  <h1 :class="titleClass">Make me red using bind shorthand!</h1>
+  <!-- <h1 :class="titleClass">Make me red using bind shorthand!</h1> -->
+
+  <!-- increments count -->
+  <!-- <button v-on:click="increment">Count is: {{ counter.count }}</button>&nbsp; -->
+  <!-- increments count w/shorthand -->
+  <button @click="increment">Add to Count: {{ counter.count }}</button>&nbsp;
+  <!-- decrease count w/shorthand -->
+  <button @click="decrease">Decrease Count: {{ counter.count }}</button>
 
 </template>
 
