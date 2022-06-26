@@ -26,6 +26,13 @@
       // }
       toggle() {
         this.awesome = !this.awesome
+      },
+      addToDo() {
+        // ...
+        this.newTodo = ''
+      },
+      removeToDo() {
+        // ...
       }
     }
   }
@@ -58,9 +65,20 @@
   <!-- <input v-model="text" placeholder="Type here" /> -->
   <!-- <p>{{ text }}</p> -->
 
-  <button @click="toggle">toggle</button>
+  <!-- <button @click="toggle">toggle</button>
   <h1 v-if="awesome">Vue is awesome!</h1>
-  <h1 v-else>Oh no...</h1>
+  <h1 v-else>Oh no...</h1> -->
+
+  <form @submit.prevent="addToDo">
+    <input v-model="newTodo" />
+    <button></button>
+  </form>
+  <ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+      <button @click="removeTodo(todo)">X</button>
+    </li>
+  </ul>
 
 </template>
 
