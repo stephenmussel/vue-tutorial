@@ -1,4 +1,6 @@
 <script>
+  let id = 0;
+
   export default {
     // component options
 
@@ -11,7 +13,13 @@
         },
         titleClass: 'title',
         text: '',
-        awesome: true
+        awesome: true,
+        newTodo: '',
+        todos: [
+          { id: id++, text: 'Learn HTML' },
+          { id: id++, text: 'Learn JavaScript' },
+          { id: id++, text: 'Learn Vue' },
+        ]
       }
     },
     methods: {
