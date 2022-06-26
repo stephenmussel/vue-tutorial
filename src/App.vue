@@ -36,7 +36,8 @@
         this.awesome = !this.awesome
       },
       addToDo() {
-        // ...
+        // adds todo to todos array
+        this.todos.push({ id: id++, text: this.newTodo })
         this.newTodo = ''
       },
       removeToDo() {
@@ -79,7 +80,7 @@
 
   <form @submit.prevent="addToDo">
     <input v-model="newTodo" />
-    <button></button>
+    <button>Add Todo</button>
   </form>
   <ul>
     <li v-for="todo in todos" :key="todo.id">
