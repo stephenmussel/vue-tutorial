@@ -8,10 +8,10 @@
         message: 'Hellow World!',
         counter: {
           count: 0
-        }
+        },
+        titleClass: 'title'
       }
     }
-
   }
 </script>
 
@@ -23,7 +23,20 @@
   <!-- <h1>{{ message }}</h1> -->
 
   <!-- can use JS expressions -->
-  <h1>{{ message.split('').reverse().join('') }}</h1>
-  <p>Counter is: {{ counter.count }}</p>
+  <!-- <h1>{{ message.split('').reverse().join('') }}</h1> -->
+  <!-- <p>Counter is: {{ counter.count }}</p> -->
+
+  <!-- added dynamic class binding to `class` -->
+  <h1 v-bind:class="titleClass">Make me red</h1>
+  <!-- binding directive shorthand -->
+  <h1 :class="titleClass">Make me red using bind shorthand!</h1>
+
 </template>
 
+<style>
+
+  .title {
+    color: red;
+  }
+
+</style>
