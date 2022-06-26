@@ -18,7 +18,7 @@
         todos: [
           { id: id++, text: 'Learn HTML' },
           { id: id++, text: 'Learn JavaScript' },
-          { id: id++, text: 'Learn Vue' },
+          { id: id++, text: 'Learn Vue' }
         ]
       }
     },
@@ -40,8 +40,9 @@
         this.todos.push({ id: id++, text: this.newTodo })
         this.newTodo = ''
       },
-      removeToDo() {
-        // ...
+      removeTodo(todo) {
+         // removes selected todo
+        this.todos = this.todos.filter((selected) => selected !== todo)        
       }
     }
   }
