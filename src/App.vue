@@ -9,7 +9,8 @@
         counter: {
           count: 0
         },
-        titleClass: 'title'
+        titleClass: 'title',
+        text: ''
       }
     },
     methods: {
@@ -18,6 +19,9 @@
       },
       decrease() {
         this.counter.count--
+      },
+      onInput(e) {
+        this.text = e.target.value
       }
     }
   }
@@ -42,9 +46,12 @@
   <!-- increments count -->
   <!-- <button v-on:click="increment">Count is: {{ counter.count }}</button>&nbsp; -->
   <!-- increments count w/shorthand -->
-  <button @click="increment">Add to Count: {{ counter.count }}</button>&nbsp;
+  <!-- <button @click="increment">Add to Count: {{ counter.count }}</button>&nbsp; -->
   <!-- decrease count w/shorthand -->
-  <button @click="decrease">Decrease Count: {{ counter.count }}</button>
+  <!-- <button @click="decrease">Decrease Count: {{ counter.count }}</button> -->
+
+  <input :value="text" @input="onInput" placeholder="Type here" />
+  <p>{{ text }}</p>
 
 </template>
 
