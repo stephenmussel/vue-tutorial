@@ -10,7 +10,8 @@
           count: 0
         },
         titleClass: 'title',
-        text: ''
+        text: '',
+        awesome: true
       }
     },
     methods: {
@@ -23,6 +24,9 @@
       // onInput(e) {
       //   this.text = e.target.value
       // }
+      toggle() {
+        // ...
+      }
     }
   }
 </script>
@@ -51,9 +55,12 @@
   <!-- <button @click="decrease">Decrease Count: {{ counter.count }}</button> -->
 
   <!-- <input :value="text" @input="onInput" placeholder="Type here" /> -->
-  <input v-model="text" placeholder="Type here" />
+  <!-- <input v-model="text" placeholder="Type here" /> -->
+  <!-- <p>{{ text }}</p> -->
 
-  <p>{{ text }}</p>
+  <button @click="toggle">toggle</button>
+  <h1>Vue is awesome!</h1>
+  <h1>Oh no...</h1>
 
 </template>
 
