@@ -25,7 +25,7 @@
       //   this.text = e.target.value
       // }
       toggle() {
-        // ...
+        this.awesome = !this.awesome
       }
     }
   }
@@ -59,8 +59,8 @@
   <!-- <p>{{ text }}</p> -->
 
   <button @click="toggle">toggle</button>
-  <h1>Vue is awesome!</h1>
-  <h1>Oh no...</h1>
+  <h1 v-if="awesome">Vue is awesome!</h1>
+  <h1 v-else>Oh no...</h1>
 
 </template>
 
