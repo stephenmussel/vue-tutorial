@@ -15,6 +15,7 @@
         text: '',
         awesome: true,
         newTodo: '',
+        hideCompleted: false,
         todos: [
           { id: id++, text: 'Learn HTML', done: true },
           { id: id++, text: 'Learn JavaScript', done: true },
@@ -23,7 +24,11 @@
       }
     },
     computed: {
-      // ...
+      filteredTodos() {
+
+        // click button either filters and hides todos that are completed or displays all todos 
+        return this.hideCompleted ? this.todos.filter(each => !each.done) : this.todos
+      }
     },
     methods: {
       increment() {
@@ -87,13 +92,21 @@
     <button>Add Todo</button>
   </form>
   <ul>
-    <li v-for="todo in todos" :key="todo.id">
+
+    <!-- list todo items -->
+    <li v-for="todo in filteredTodos" :key="todo.id">
     <input type="checkbox" v-model="todo.done"/>
+
+      <!-- renders styling by class if box is checked -->
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
       <button @click="removeTodo(todo)">X</button>
     </li>
   </ul>
+
+  <!-- toggles boolean value of hideCompleted -->
   <button @click="hideCompleted = !hideCompleted">
+
+    <!-- displays button text based on boolean  -->
     {{ hideCompleted ? 'Show all' : 'Hide completed'}}
   </button>
 
