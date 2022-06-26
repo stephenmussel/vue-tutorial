@@ -15,8 +15,11 @@
 <template>
   <!-- hard coded -->
   <!-- <h1>Hello World!</h1> -->
-  
+
   <!-- how to render dynamic text based on value of `message` -->
-  <h1>{{ message }}</h1>
+  <!-- <h1>{{ message }}</h1> -->
+
+  <!-- can use JS expressions -->
+  <h1>{{ message.split('').reverse().join('') }}</h1>
 </template>
 
