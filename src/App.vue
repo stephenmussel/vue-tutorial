@@ -20,9 +20,9 @@
       decrease() {
         this.counter.count--
       },
-      onInput(e) {
-        this.text = e.target.value
-      }
+      // onInput(e) {
+      //   this.text = e.target.value
+      // }
     }
   }
 </script>
@@ -50,7 +50,9 @@
   <!-- decrease count w/shorthand -->
   <!-- <button @click="decrease">Decrease Count: {{ counter.count }}</button> -->
 
-  <input :value="text" @input="onInput" placeholder="Type here" />
+  <!-- <input :value="text" @input="onInput" placeholder="Type here" /> -->
+  <input v-model="text" placeholder="Type here" />
+
   <p>{{ text }}</p>
 
 </template>
