@@ -16,11 +16,14 @@
         awesome: true,
         newTodo: '',
         todos: [
-          { id: id++, text: 'Learn HTML' },
-          { id: id++, text: 'Learn JavaScript' },
-          { id: id++, text: 'Learn Vue' }
+          { id: id++, text: 'Learn HTML', done: true },
+          { id: id++, text: 'Learn JavaScript', done: true },
+          { id: id++, text: 'Learn Vue', done: false }
         ]
       }
+    },
+    computed: {
+      // ...
     },
     methods: {
       increment() {
@@ -37,7 +40,7 @@
       },
       addToDo() {
         // adds todo to todos array
-        this.todos.push({ id: id++, text: this.newTodo })
+        this.todos.push({ id: id++, text: this.newTodo, done: false })
         this.newTodo = ''
       },
       removeTodo(todo) {
@@ -85,10 +88,14 @@
   </form>
   <ul>
     <li v-for="todo in todos" :key="todo.id">
-      {{ todo.text }}
+    <input type="checkbox" v-model="todo.done"/>
+      <span :class="{ done: todo.done }">{{ todo.text }}</span>
       <button @click="removeTodo(todo)">X</button>
     </li>
   </ul>
+  <button @click="hideCompleted = !hideCompleted">
+    {{ hideCompleted ? 'Show all' : 'Hide completed'}}
+  </button>
 
 </template>
 
@@ -96,6 +103,10 @@
 
   .title {
     color: red;
+  }
+
+  .done {
+    text-decoration: line-through;
   }
 
 </style>
