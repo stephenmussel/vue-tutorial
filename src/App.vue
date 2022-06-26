@@ -5,7 +5,10 @@
     // data component option is a function that renders an object
     data() {
       return {
-        message: 'Hellow World!'
+        message: 'Hellow World!',
+        counter: {
+          count: 0
+        }
       }
     }
 
@@ -21,5 +24,6 @@
 
   <!-- can use JS expressions -->
   <h1>{{ message.split('').reverse().join('') }}</h1>
+  <p>Counter is: {{ counter.count }}</p>
 </template>
 
