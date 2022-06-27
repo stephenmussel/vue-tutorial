@@ -159,7 +159,7 @@
   <!-- <ChildComp @response="(msg) => childMsg = msg " />
   <p>{{ childMsg }}</p> -->
 
-  <ChildComp></ChildComp>
+  <ChildComp>This is some slot content!</ChildComp>
 
 </template>
 
