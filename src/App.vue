@@ -54,7 +54,8 @@
       }
     },
     mounted() {
-      // ...
+      // direct DOM operation to change `textContent`
+      this.$refs.p.textContent = 'mounted!'
     }
   }
 </script>
