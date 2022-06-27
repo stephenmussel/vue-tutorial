@@ -13,7 +13,9 @@
     // data component option is a function that renders an object
     data() {
       return {
-        greeting: 'Hello from parent'
+        // props from parent
+        greeting: 'Hello from parent',
+        
         message: 'Hellow World!',
         counter: {
           count: 0
@@ -147,7 +149,7 @@
   <pre v-else>{{ todoData }}</pre> -->
 
   <!-- render child component -->
-  <ChildComp />
+  <ChildComp :msg="greeting" />
 
 </template>
 
