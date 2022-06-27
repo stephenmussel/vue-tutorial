@@ -1,9 +1,14 @@
 <script>
   let id = 0;
 
+  // NOTES: inside <script>
+  import ChildComp from './components/ChildComp.vue'
+
   export default {
     // component options
-    // register child component
+    components: {
+      ChildComp
+    },
 
     // data component option is a function that renders an object
     data() {
@@ -141,7 +146,8 @@
   <pre v-else>{{ todoData }}</pre> -->
 
   <!-- render child component -->
-  <p>child component goes here...</p>
+  <ChildComp />
+  
 </template>
 
 <style>
