@@ -13,6 +13,8 @@
     // data component option is a function that renders an object
     data() {
       return {
+        childMsg: 'No child msg yet',
+
         // props from parent
         greeting: 'Hello from parent',
         
@@ -149,7 +151,10 @@
   <pre v-else>{{ todoData }}</pre> -->
 
   <!-- render child component -->
-  <ChildComp :msg="greeting" />
+  <!-- <ChildComp :msg="greeting" /> -->
+
+  <ChildComp />
+  <p>{{ childMsg }}</p>
 
 </template>
 
