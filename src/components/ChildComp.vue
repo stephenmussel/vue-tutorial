@@ -12,7 +12,7 @@
         },
         emits: ['response'],
         created() {
-            // emit with argument
+            // emit with argument (event name, msg)
             this.$emit('response', 'hello from child!')
         },
     }

@@ -153,7 +153,8 @@
   <!-- render child component -->
   <!-- <ChildComp :msg="greeting" /> -->
 
-  <ChildComp />
+  <!-- NOTES: response is event name. receives argument from child emit call and assigns it to local state -->
+  <ChildComp @response="(msg) => childMsg = msg " />
   <p>{{ childMsg }}</p>
 
 </template>
