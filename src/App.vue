@@ -20,7 +20,9 @@
           { id: id++, text: 'Learn HTML', done: true },
           { id: id++, text: 'Learn JavaScript', done: true },
           { id: id++, text: 'Learn Vue', done: false }
-        ]
+        ],
+        todoId: 1,
+        todoData: null
       }
     },
     computed: {
@@ -51,11 +53,20 @@
       removeTodo(todo) {
          // removes selected todo
         this.todos = this.todos.filter((selected) => selected !== todo)        
+      },
+      async fetchData() {
+        this.todoData = null
+        const res = await fetch(
+          `https://jsonplaceholder.typicode.com/todos/${this.todoId}`
+        )
+        this.todoData = await res.json()
       }
     },
     mounted() {
       // direct DOM operation to change `textContent`
-      this.$refs.p.textContent = 'mounted!'
+      // this.$refs.p.textContent = 'mounted!'
+
+      this.fetchData()
     }
   }
 </script>
@@ -114,7 +125,12 @@
     <!-- {{ hideCompleted ? 'Show all' : 'Hide completed'}}
   </button> -->
 
-  <p ref="p">hello</p>
+  <!-- <p ref="p">hello</p> -->
+
+  <p>Todo id: {{ todoId }}</p>
+  <button @click="todoId++">Fetch next todo</button>
+  <p v-if="!todoData">Loading...</p>
+  <pre v-else>{{ todoData }}</pre>
 
 </template>
 
