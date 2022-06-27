@@ -52,6 +52,9 @@
          // removes selected todo
         this.todos = this.todos.filter((selected) => selected !== todo)        
       }
+    },
+    mounted() {
+      // ...
     }
   }
 </script>
@@ -87,28 +90,30 @@
   <h1 v-if="awesome">Vue is awesome!</h1>
   <h1 v-else>Oh no...</h1> -->
 
-  <form @submit.prevent="addToDo">
+  <!-- <form @submit.prevent="addToDo">
     <input v-model="newTodo" />
     <button>Add Todo</button>
   </form>
-  <ul>
+  <ul> -->
 
     <!-- list todo items -->
-    <li v-for="todo in filteredTodos" :key="todo.id">
-    <input type="checkbox" v-model="todo.done"/>
+    <!-- <li v-for="todo in filteredTodos" :key="todo.id">
+    <input type="checkbox" v-model="todo.done"/> -->
 
       <!-- renders styling by class if box is checked -->
-      <span :class="{ done: todo.done }">{{ todo.text }}</span>
+      <!-- <span :class="{ done: todo.done }">{{ todo.text }}</span>
       <button @click="removeTodo(todo)">X</button>
     </li>
-  </ul>
+  </ul> -->
 
   <!-- toggles boolean value of hideCompleted -->
-  <button @click="hideCompleted = !hideCompleted">
+  <!-- <button @click="hideCompleted = !hideCompleted"> -->
 
     <!-- displays button text based on boolean  -->
-    {{ hideCompleted ? 'Show all' : 'Hide completed'}}
-  </button>
+    <!-- {{ hideCompleted ? 'Show all' : 'Hide completed'}}
+  </button> -->
+
+  <p ref="p">hello</p>
 
 </template>
 
