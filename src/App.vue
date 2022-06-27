@@ -67,6 +67,13 @@
       // this.$refs.p.textContent = 'mounted!'
 
       this.fetchData()
+    },
+    watch: {
+
+      // function that watches for todoId to change then fetches data for new Id
+      todoId() {
+        this.fetchData()
+      }
     }
   }
 </script>
