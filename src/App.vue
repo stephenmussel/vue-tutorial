@@ -3,6 +3,7 @@
 
   export default {
     // component options
+    // register child component
 
     // data component option is a function that renders an object
     data() {
@@ -134,11 +135,13 @@
 
   <!-- <p ref="p">hello</p> -->
 
-  <p>Todo id: {{ todoId }}</p>
+  <!-- <p>Todo id: {{ todoId }}</p>
   <button @click="todoId++">Fetch next todo</button>
   <p v-if="!todoData">Loading...</p>
-  <pre v-else>{{ todoData }}</pre>
+  <pre v-else>{{ todoData }}</pre> -->
 
+  <!-- render child component -->
+  <p>child component goes here...</p>
 </template>
 
 <style>
