@@ -20,5 +20,7 @@
 </script>
 
 <template>
-    <h1>{{ title }}</h1>
+    <!-- <h1>{{ title }}</h1> -->
+
+    <slot>Fallback content</slot>
 </template>

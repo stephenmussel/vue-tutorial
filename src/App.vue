@@ -13,6 +13,8 @@
     // data component option is a function that renders an object
     data() {
       return {
+        msg: 'from parent',
+        
         childMsg: 'No child msg yet',
 
         // props from parent
@@ -154,8 +156,10 @@
   <!-- <ChildComp :msg="greeting" /> -->
 
   <!-- NOTES: response is event name. receives argument from child emit call and assigns it to local state -->
-  <ChildComp @response="(msg) => childMsg = msg " />
-  <p>{{ childMsg }}</p>
+  <!-- <ChildComp @response="(msg) => childMsg = msg " />
+  <p>{{ childMsg }}</p> -->
+
+  <ChildComp></ChildComp>
 
 </template>
 
