@@ -13,6 +13,7 @@
     // data component option is a function that renders an object
     data() {
       return {
+        greeting: 'Hello from parent'
         message: 'Hellow World!',
         counter: {
           count: 0
@@ -147,7 +148,7 @@
 
   <!-- render child component -->
   <ChildComp />
-  
+
 </template>
 
 <style>
